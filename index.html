@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Referrer" content="origin">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>{title}</title>
+    <style>
+        header ul{overflow:hidden;margin:0;padding:0}
+        header li{float:left;margin:0 20px;list-style:none;padding:0}
+        header li a{display:block;text-decoration:none;font-size:16px;border-bottom:solid 2px royalblue;padding:20px}
+        section{padding:20px 0 0 0}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        <ul>
+            <li><a class="nav-link active" href="/movies">movies</a></li>
+            <li><a class="nav-link" href="/stars">stars</a></li>
+            <li><a class="nav-link" href="/api/movies">/api/movies</a></li>
+            <li><a class="nav-link" href="/api/stars">/api/stars</a></li>
+            <li><a class="nav-link" href="/api/movies/<영화이름>/stars">stars</a></li>
+            <li><a class="nav-link" href="/api/movies/<영화이름>/starts/<배우 이름>">stars</a></li>
+        </ul>
+    </header>
+    <section>
+        {movieList}
+    </section>
+</div>
+</body>
+</html>
