@@ -1,0 +1,140 @@
+/* const http = require('http');
+const fs = require('fs');
+ */
+const convertToUrlMovie = (movieName)=> {
+    return `/api/movies/${movieName}/movieTitle/stars`
+};
+
+if (req.url === '/movies') viewMovies()
+else if(req.url === '/stars') viewStars()
+else if(req.url === '/api/movies') apiMovies()
+else if(req.url === '/api/stars') apiStars()
+/* else if(req.url === '/api/movies/:movieTitle/stars') detailMovie() */
+
+
+const REGEXP_MOVIE_TITLE = /^\/api\/movies\/[ㄱ-ㅎㅏ-ㅣ가-힣\w\s]+\/stars$/;
+const isMovieTitleUrl = (value) => REGEXP_MOVIE_TITLE.test(value);
+const isEquals = (value, comparer) => value === comparer;
+
+const URL_MOVIE = "/movies";
+const URL_STARS = "/stars";
+const URL_API_MOVIES = "/api/movies";
+
+// router 실행 시점에, 이미 저 위에 URL string 들은 메모리에 떠있는 상태고,
+// 그 메모리를 계속 다시 참조할 뿐이니까 (실행 시 마다);
+function router (req, res) {
+    let reqUrl = req.url;
+    reqUrl = decodeURIComponent(reqUrl);
+    if (isEquals(reqUrl, URL_MOVIE)) {
+        viewMovies();
+    } else if (isEquals(reqUrl, URL_STARS)) {
+        viewStars();
+    } else if (isMovieTitleUrl(reqUrl)) detailMovie()
+}
+/*
+private static String LOGIN_URL = "/login/login.pang";
+
+    UrlBuilder.path(LOGIN_URL)
+  .param("test", true)
+  .param("value", 1)
+  .build()
+  .toString();
+   > "/login/login.pang?test=true&value=1" */
+
+/* @RequestMapping({method = HttpMethod.GET, value = "/carts/{cartItemId:[0-9]+}/View"});
+@RequestBody
+class ModelAndView showCartView(HttpServletRequest request, @PathVariable("cartItemId") long cartItemId) {
+
+} */
+
+const urlHelper = {
+    REGEXP_MOVIE_TITLE: /^\/api\/movies\/[ㄱ-ㅎㅏ-ㅣ가-힣\w\s]+\/stars$/,
+    isEquals: () => {},
+
+};
+
+
+
+// req.url :  /api/movies/%EB%9E%A8%ED%8E%98%EC%9D%B4%EC%A7%80/stars
+
+encodeURIComponent("램페이지");
+> "%EB%9E%A8%ED%8E%98%EC%9D%B4%EC%A7%80";
+
+decodeURIComponent("%EB%9E%A8%ED%8E%98%EC%9D%B4%EC%A7%80");
+> "램페이지";
+
+/*
+
+} else if(req.url === '/api/movies/:moviename/stars') { //api/movies/<영화이름>/stars  <영화> 출연배우들 json
+
+url.parse()
+
+*/
+
+router.get('/:diNo',selectDepart);
+
+function selectDepart(req,res,next){
+    ds.selectDepart(req)
+        .then(result =>{
+            res.json(result);
+        })
+};
+
+function selectDepart(req,res,next){
+    var sql = "select diNo, diName, diDesc, diCnt from depart_info where diNo=?";
+    var diNo = req.params.diNo;
+    // console.log(' req.params.diNo : ' + diNo);
+    return con.then((con)=>{
+        return con.query(sql, diNo);
+    })
+        .then(rowsHandle)
+        .catch(errorHandle);
+};
+
+
+// dataModel.js
+define([
+    "jquery",
+    "lodash"
+], function ($,
+             _) {
+    "use strict";
+    var _privateModel = {};
+    var DataModel = {
+        setItem: function(key,
+                          value){
+            // if () validation 거치고...
+            privateModel[key] = value;
+        },
+        getItem: function(key){
+            return _.deepCopy(privateModel[key]);
+        }
+    };
+    return $(DataModel);
+});
+
+// test.hbs.js
+define([
+    "jquery",
+    "test.hbs"
+], function($,
+            testTemplate){
+    var status = {
+
+    };
+    var draw = function(props){
+        return testTemplate($.extend(status, props));
+    };
+    return {
+        draw: draw
+    };
+});
+
+eventMap = {
+    UPDATE_COUNT: "UPDATE_COUNT",
+};
+
+$(".button").on("click", function)
+
+
+const convertToUrlMovie = (movieName)=> `/api/movies/${movieName}/movieTitle/stars`;

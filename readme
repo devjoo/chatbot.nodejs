@@ -1,0 +1,8 @@
+# Nodejs 자동 재시작 패키지 - supervisor
+https://wayhome25.github.io/nodejs/2017/02/19/nodejs-12-express-post/
+
+
+if(req.url.indexOf('.html')!=-1){
+    let _str = fs.readFileSync(`${__dirname}/views/${req.url}`, 'utf-8')
+    res.end(_str)
+}
